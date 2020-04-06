@@ -1,240 +1,133 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 
 export default function Body() {
+    
+    const [CheckList, setCheckList] = useState([
+        {id: 1, selected : '', point: 1, question : 'Do you have cough?', icon: 'fas fa-head-side-cough'},
+        {id: 2, selected : '', point: 1, question : 'Do you have cold?', icon: 'ti-pulse'},
+        {id: 3, selected : '', point: 1, question : 'Are you having diarrhea?', icon: 'fas fa-lungs-virus'},
+        {id: 4, selected : '', point: 1, question : 'Do you have sore throat?', icon: 'fas fa-diagnoses'},
+        {id: 5, selected : '', point: 1, question : 'Are you experiencing MYALGIA or body aches?', icon: 'fas fa-brain'},
+        {id: 6, selected : '', point: 1, question : 'Do you have a headache?', icon: 'fas fa-procedures'},
+        {id: 7, selected : '', point: 1, question : 'Do you have fever?', icon: 'fas fa-lungs'},
+        {id: 8, selected : '', point: 2, question : 'Are you having difficulty in breathing?', icon: 'material-icons'},
+        {id: 9, selected : '', point: 2, question : 'Are you experiencing fatigue?', icon: 'fas fa-plane'},
+        {id: 10, selected : '', point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-head-side-mask'},
+        {id: 11, selected : '', point: 3, question : 'Do you have travel history to a COVID-19 INFECTED AREA?', icon: 'ti-mobile'},
+        {id: 12, selected : '', point: 3, question : 'Do you have direct contact or is taking care of a positive COVID-19 PATIENT?', icon: 'ti-mobile'},
+    ]);
+
+    const [score, setScore] = useState(0);
+
+    const handleResult = async(data, checkedValue) => {
+        try{
+            const arr =  CheckList.map((ele) => {
+                if(ele.id === data.id) {
+                    ele.selected = checkedValue
+                }
+                return ele
+            })
+            setCheckList(arr)
+        }catch(e){
+            console.log(e);
+        }
+    }
+
+    useEffect(() => {
+        let score =  0;
+        CheckList.map(data => {
+            if(data.selected === 1){
+                score = score + data.point;
+            }
+        })
+        setScore(score);
+    },[CheckList])
+
+    console.log(score)
     return(
         <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
             <div class="container">           
                 <div class="row">
                     <div class="col-12 col-md-8">
                         <div class="row">
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have cough ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have cold ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
+                            {CheckList.map((data,index) => {
+                                return(
+                                    <div class="col-12 col-md-4">
+                                        <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
+                                            <div class="single-icon">
+                                                <i class={data.icon} aria-hidden="true"></i>
+                                            </div>
+                                            <h4>{data.question}</h4>
+                                            <div class="app-download-area">
+                                                <div class="app-download-btn">
+                                                    <a onClick={() => {handleResult(data, 1)}} className={data.selected === 1  ? 'selected-btn' : ''}><p> Yes</p></a>
+                                                </div>
+                                                <div class="app-download-btn">
+                                                    <a onClick={() => {handleResult(data, 0)}} className={data.selected === 0 ? 'selected-btn' : ''}> <p> No</p></a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Are you having Diarrhea ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have Sore throat ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Are you experiencing MYALGIA or Body Aches ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have a headache ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have fever ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Are you having difficulty in breathing ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Are you experiencing Fatigue ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have you traveled recently during the past 14 days ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-12 col-md-4">
-                                <div class="single-special text-center wow fadeInUp" data-wow-delay="0.2s">
-                                    <div class="single-icon">
-                                        <i class="ti-mobile" aria-hidden="true"></i>
-                                    </div>
-                                    <h4>Do you have direct contact of a positive COVID-19 PATIENT ?</h4>
-                                    <div class="app-download-area">
-                                        <div class="app-download-btn">
-                                            <a href="#"><p class="mb-0"> Yes</p></a>
-                                        </div>
-                                        <div class="app-download-btn">
-                                            <a href="#"> <p class="mb-0"> No</p></a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>                
+                                )
+                            })}
                         </div>                
                     </div>
                 <div class="col-12 col-md-4" style={{boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'}} >
                     <div class="row">
-                        <div class="col-12">
+                        {/* <div class="col-12">
                             <div class="section-heading text-center">
                                 <h2>Result</h2>
                                 <div class="line-shape"></div>
                             </div>
-                        </div>
-                        {/* <main>
+                        </div> */}
+                        <main>
                             <div class="container">
+                            <div class="section-heading text-center">
+                                <h2>Result</h2>
+                                <div class="line-shape"></div>
+                        </div>
                             <section class="section-one card section-margin">
-                                <div class="result">            
-                                <h1 class={score !== null && (score >= 0 && score <=5 ? "low" : score >= 6 && score <=12 ? "mid" : score >= 13 ? "high" : '')}>
-                                    {score !== null && (score >= 0 && score <=5 ? "Low" : score >= 6 && score <=12 ? "Medium" : score >= 13 ? "High" : '')}
-                                    {score !== null && 
-                                        ( score >= 0 && score <=2 ? <p>May be stress related and observe.</p>
-                                        : score >= 3 && score <=5 ? <p>Hydrate properly and proper personal hygine.<br />Observe and Re-evaluate after 2 days.</p>
-                                        : score >= 6 && score <=12? <p>Seek a consultation with doctor.</p>
-                                        : score >= 13 ? <p>Call the DOH Hotline 02-8-651-7800"</p>
-                                        : '')
-                                    }
-                                    
-                                </h1>
-                                <div class="layout-align">
-                                    <div id="score-meter-1" class="layout-align">
-                                    <div id="scorer-1-inner-div">
-                                        <div id="scorer-1-inner-div-5">
-                                        <div class={score !== null && (score >= 0 && score <=5 ? "scorer-1-tick low" : score >= 6 && score <=12 ? "scorer-1-tick mid" : score >= 13 ? "scorer-1-tick high" : '')}></div>
+                                {score !== null && score !== 0 ?
+                                <div>
+                                <div class="result">
+                                    <h1 class={score !== null && (score >= 0 && score <=5 ? "low" : score >= 6 && score <=12 ? "mid" : score >= 13 ? "high" : '')}>
+                                        {score !== null && (score >= 0 && score <=5 ? "Low" : score >= 6 && score <=12 ? "Medium" : score >= 13 ? "High" : '')}
+                                    </h1>            
+
+                                    <div class="layout-align">
+                                        <div id="score-meter-1" class="layout-align">
+                                        <div id="scorer-1-inner-div">
+                                            <div id="scorer-1-inner-div-5">
+                                                <div class={score !== null && (score >= 0 && score <=5 ? "scorer-1-tick low" : score >= 6 && score <=12 ? "scorer-1-tick mid" : score >= 13 ? "scorer-1-tick high" : '')}></div>
+                                            </div>
+                                        </div>
+                                        <div id="scorer-1-inner-div-2"></div>
+                                        <div id="scorer-1-inner-div-3"></div>
+                                        <div id="scorer-1-inner-div-4"></div>
                                         </div>
                                     </div>
-                                    <div id="scorer-1-inner-div-2"></div>
-                                    <div id="scorer-1-inner-div-3"></div>
-                                    <div id="scorer-1-inner-div-4"></div>
-                                    </div>
+                                </div>
+                                <hr></hr>
+                                <div>
+                                    <h1 class={score !== null && (score >= 0 && score <=5 ? "low" : score >= 6 && score <=12 ? "mid" : score >= 13 ? "high" : '')}>
+                                        {score !== null && 
+                                            ( score >= 0 && score <=2 ? <p>May be stress related and observe.</p>
+                                            : score >= 3 && score <=5 ? <p>Hydrate properly and proper personal hygine.<br />Observe and Re-evaluate after 2 days.</p>
+                                            : score >= 6 && score <=12? <p>Seek a consultation with doctor.</p>
+                                            : score >= 13 ? <p>Call the DOH Hotline 02-8-651-7800"</p>
+                                            : '')
+                                        }
+                                    </h1>    
                                 </div>
                                 </div>
+                                :''
+                                }
                             </section>
                             
                             {(score !== null && (score >= 0 && score <=5)) &&
-                                    <section class="section-two card section-margin">
+                                <section class="section-two card section-margin">
+                                    {score !== null && score !== 0 ?
+                                        <div>
                                     <p>Based on your inputs, A1Abilities advises the following:</p>
                                     <ol>
                                         <li>Stay home and take care of yourself in home isolation</li>
@@ -255,9 +148,12 @@ export default function Body() {
                                         worsens
                                         </li>
                                     </ol>
-                                    </section>    
+                                    </div>
+                                    :''}
+                                </section>    
                             }
                     
+                                   
                             { (score !== null &&  (score >= 6 && score <=12)) &&
                                 <section class="section-two card section-margin">
                                     <p>Based on your inputs, A1Abilities recommendations:</p>
@@ -360,7 +256,7 @@ export default function Body() {
                                 </ul>
                             </section>
                             </div>
-                        </main> */}
+                        </main>
                     </div>
                 </div>
             </div>
