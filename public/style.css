@@ -614,6 +614,7 @@ p {
     -o-transition-duration: 800ms;
     transition-duration: 800ms;
     margin-bottom: 30px;
+    min-height: 270px;
 }
 
 .special_description_content > h2 {
