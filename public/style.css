@@ -641,8 +641,11 @@ p {
     display: flex;
     -ms-flex-preferred-size: 1;
     flex-basis: 1;
-    margin-top: 10px;
+    
     justify-content: center;
+    position: absolute;
+    bottom: 65px;
+    left: unset;
 }
 
 .app-download-btn a {
