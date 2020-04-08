@@ -30,8 +30,8 @@
 
 .header h1 {
   text-align: center;
-  margin: 0 10px;
-  font-size: 14px;
+  margin: 0 210px;
+  font-size: 5px;
   text-transform: uppercase;
   color: #2456c49f;
 }
@@ -237,7 +237,7 @@ main {
     border-radius: 15px;
   }
   main {
-    padding-bottom: 25px;
+    padding-bottom: 150px;
   }
 }
 

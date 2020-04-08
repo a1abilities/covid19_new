@@ -5,12 +5,15 @@ function Header() {
     <header class="header">
         <div class="container">
             <a href="https://a1abilities.co.nz" target="_blank">
-                <img src="img/A1AbilitiesLogo.jpeg" alt="A1Abilities" class="logo" />
+                <img src="img/A1.png" alt="A1Abilities" class="logo" />
             </a>
-            <h1>COVID RISK SCANNER</h1>
+            <div class="container"> <h1>COVID-19 RISK SCANNER</h1></div>
+
         </div>
     </header>
   );
 }
 
 export default Header;
+
+

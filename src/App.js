@@ -9,9 +9,7 @@ import Body from './Components/Body.js'
 function App() {
   return (
     <div>
-      {/* <div id="preloader">
-        <div class="colorlib-load"></div>
-      </div> */}
+  
       <Header />
       <Body />
       <Footer />

@@ -1,20 +1,20 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Fragment} from 'react';
 
 export default function Body() {
     
     const [CheckList, setCheckList] = useState([
         {id: 1, selected : '', point: 1, question : 'Do you have cough?', icon: 'fas fa-head-side-cough'},
-        {id: 2, selected : '', point: 1, question : 'Do you have cold?', icon: 'ti-pulse'},
-        {id: 3, selected : '', point: 1, question : 'Are you having diarrhea?', icon: 'fas fa-lungs-virus'},
+        {id: 2, selected : '', point: 1, question : 'Do you have cold?', icon: 'fas fa-thermometer-empty'},
+        {id: 3, selected : '', point: 1, question : 'Are you having diarrhea?', icon: 'fas fa-male',icon:'fas fa-toilet '},
         {id: 4, selected : '', point: 1, question : 'Do you have sore throat?', icon: 'fas fa-diagnoses'},
-        {id: 5, selected : '', point: 1, question : 'Are you experiencing MYALGIA or body aches?', icon: 'fas fa-brain'},
-        {id: 6, selected : '', point: 1, question : 'Do you have a headache?', icon: 'fas fa-procedures'},
-        {id: 7, selected : '', point: 1, question : 'Do you have fever?', icon: 'fas fa-lungs'},
-        {id: 8, selected : '', point: 2, question : 'Are you having difficulty in breathing?', icon: 'material-icons'},
-        {id: 9, selected : '', point: 2, question : 'Are you experiencing fatigue?', icon: 'fas fa-plane'},
-        {id: 10, selected : '', point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-head-side-mask'},
-        {id: 11, selected : '', point: 3, question : 'Do you have travel history to a COVID-19 INFECTED AREA?', icon: 'ti-mobile'},
-        {id: 12, selected : '', point: 3, question : 'Do you have direct contact or is taking care of a positive COVID-19 PATIENT?', icon: 'ti-mobile'},
+        {id: 5, selected : '', point: 1, question : 'Are you experiencing MYALGIA or body aches?', icon: 'fas fa-lungs'},
+        {id: 6, selected : '', point: 1, question : 'Do you have a headache?', icon: 'fas fa-brain'},
+        {id: 7, selected : '', point: 1, question : 'Do you have fever?', icon: 'fas fa-thermometer-full'},
+        {id: 8, selected : '', point: 2, question : 'Are you having difficulty in breathing?', icon: 'fas fa-lungs-virus'},
+        {id: 9, selected : '', point: 2, question : 'Are you experiencing fatigue?', icon: 'fa fa-male'},
+        {id: 10, selected : '', point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-plane'},
+        {id: 11, selected : '', point: 3, question : 'Do you have travel history to a COVID-19 INFECTED AREA?', icon: 'fas fa-map-marked-alt'},
+        {id: 12, selected : '', point: 3, question : 'Do you have direct contact or is taking care of a positive COVID-19 PATIENT?', icon: 'fas fa-head-side-mask'},
     ]);
 
     const [score, setScore] = useState(0);
@@ -59,12 +59,23 @@ export default function Body() {
                                             </div>
                                             <h4>{data.question}</h4>
                                             <div class="app-download-area">
+                                            {index === 11 ? <Fragment>
+                                                <div class="app-download-btn">
+                                                    <a  href = "#"  onClick={() => {handleResult(data, 1)}} className={data.selected === 1  ? 'selected-btn' : ''}><p> Yes</p></a>
+                                                </div>
+                                                <div class="app-download-btn">
+                                                    <a  href = "#"  onClick={() => {handleResult(data, 0)}} className={data.selected === 0 ? 'selected-btn' : ''}> <p> No</p></a>
+                                                </div>
+                                                </Fragment>
+                                                :<Fragment>
                                                 <div class="app-download-btn">
                                                     <a onClick={() => {handleResult(data, 1)}} className={data.selected === 1  ? 'selected-btn' : ''}><p> Yes</p></a>
                                                 </div>
                                                 <div class="app-download-btn">
                                                     <a onClick={() => {handleResult(data, 0)}} className={data.selected === 0 ? 'selected-btn' : ''}> <p> No</p></a>
                                                 </div>
+                                                </Fragment>
+                                            }
                                             </div>
                                         </div>
                                     </div>
@@ -200,59 +211,29 @@ export default function Body() {
                                 <p>
                                 Be aware or Educate yourself with the latest updates on the
                                 following websites : 
-                                <a href="https://www.who.int/health-topics/coronavirus" target="_blank" >WHO </a>&
-                                <a href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert" target="_blank"> Department of Health - Australia</a>&
+                                <a href="https://www.who.int/health-topics/coronavirus" target="_blank" >WHO </a> &
+                                <a href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert" target="_blank"> Department of Health - Australia</a> &
                                 <a href="https://www.healthdirect.gov.au/" target="_blank"> Health Direct</a>
                                 </p>
-                                <p>
-                                Most people who become infected experience mild illness and recover,
-                                but it can be more severe for others. Take care of your health and
-                                protect others by doing the following:
-                                </p>
+                               
                                 <ul>
                                 <li>
-                                    <h4>Wash your hands frequently</h4>
-                                    <p>
-                                    Regularly and thoroughly clean your hands with an alcohol-based
-                                    hand rub or wash them with soap and water.
-                                    </p>
+                                    <h4><img src="/img/wash.svg" width="50px"></img>&nbsp; Wash your hands frequently</h4>
+                                   
                                 </li>
                                 <li>
-                                    <h4>Maintain social distancing</h4>
-                                    <p>
-                                    Maintain at least 2 metre (6 feet) distance between yourself and
-                                    anyone who is coughing or sneezing.
-                                    </p>
+                                    <h4><img src="/img/soo.png" width="50px"></img>&nbsp;Maintain social distancing</h4>
+                                   
                                 </li>
                                 <li>
-                                    <h4>Avoid touching eyes, nose and mouth</h4>
-                                    <p>
-                                    Our hands touch many surfaces and can pick up viruses. Once
-                                    contaminated, hands can transfer the virus to your eyes, nose or
-                                    mouth.
-                                    </p>
+                                    <h4><img src="/img/f.svg" width="50px"></img>&nbsp;Avoid touching face </h4>
+                                   
                                 </li>
                                 <li>
-                                    <h4>Practice respiratory hygiene</h4>
-                                    <p>
-                                    Make sure you and the people around you, follow good respiratory
-                                    hygiene. This means covering your mouth and nose with your bent
-                                    elbow or tissue when you cough or sneeze. Then dispose of the
-                                    used tissue immediately.
-                                    </p>
+                                    <h4><img src="/img/s.svg" width="50px"></img>&nbsp;Practice respiratory hygiene</h4>
+                                   
                                 </li>
-                                <li>
-                                    <h4>
-                                    If you have fever, cough and difficulty in breathing, seek
-                                    medical care early
-                                    </h4>
-                                    <p>
-                                    Stay home if you feel unwell. If you have a high fever, moderate
-                                    to severe cough and difficulty in breathing and it is worsening
-                                    in short period of time, seek medical asistance and call in
-                                    advance.
-                                    </p>
-                                </li>
+                               
                                 </ul>
                             </section>
                             </div>
