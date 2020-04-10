@@ -1,5 +1,40 @@
 @import url("reset.css");
 
+
+
+
+.fixed {
+  position: fixed;
+  background: #f83d23;
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 6px #000;
+  color: #fff;
+}
+.extra,
+.wrapper {
+  width: 75%;
+  margin: auto;
+  background-color: #ccc;
+}
+.wrapper {
+  height: 800px;
+}
+.extra {
+  height: 100px;
+
+}
+
+}
+
+
+
+
+
+
 :root {
   --text-color: #02475b;
 }
