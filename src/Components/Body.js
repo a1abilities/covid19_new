@@ -3,18 +3,18 @@ import React, {useEffect, useState, Fragment} from 'react';
 export default function Body() {
     
     const [CheckList, setCheckList] = useState([
-        {id: 1, selected : '', point: 1, question : 'Do you have cough?', icon: 'fas fa-head-side-cough'},
-        {id: 2, selected : '', point: 1, question : 'Do you have cold?', icon: 'fas fa-thermometer-empty'},
-        {id: 3, selected : '', point: 1, question : 'Are you having diarrhea?', icon: 'fas fa-male',icon:'fas fa-toilet '},
-        {id: 4, selected : '', point: 1, question : 'Do you have sore throat?', icon: 'fas fa-diagnoses'},
-        {id: 5, selected : '', point: 1, question : 'Are you experiencing MYALGIA or body aches?', icon: 'fas fa-lungs'},
-        {id: 6, selected : '', point: 1, question : 'Do you have a headache?', icon: 'fas fa-brain'},
-        {id: 7, selected : '', point: 1, question : 'Do you have fever?', icon: 'fas fa-thermometer-full'},
-        {id: 8, selected : '', point: 2, question : 'Are you having difficulty in breathing?', icon: 'fas fa-lungs-virus'},
-        {id: 9, selected : '', point: 2, question : 'Are you experiencing fatigue?', icon: 'fa fa-male'},
-        {id: 10, selected : '', point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-plane'},
-        {id: 11, selected : '', point: 3, question : 'Do you have travel history to a COVID-19 INFECTED AREA?', icon: 'fas fa-map-marked-alt'},
-        {id: 12, selected : '', point: 3, question : 'Do you have direct contact or is taking care of a positive COVID-19 PATIENT?', icon: 'fas fa-head-side-mask'},
+        {id: 1, selected : 0, point: 1, question : 'Do you have cough?', icon: 'fas fa-head-side-cough'},
+        {id: 2, selected : 0, point: 1, question : 'Do you have cold?', icon: 'fas fa-thermometer-empty'},
+        {id: 3, selected : 0, point: 1, question : 'Are you having diarrhea?', icon: 'fas fa-male',icon:'fas fa-toilet '},
+        {id: 4, selected : 0, point: 1, question : 'Do you have sore throat?', icon: 'fas fa-diagnoses'},
+        {id: 5, selected : 0, point: 1, question : 'Are you experiencing MYALGIA or body aches?', icon: 'fas fa-lungs'},
+        {id: 6, selected : 0, point: 1, question : 'Do you have a headache?', icon: 'fas fa-brain'},
+        {id: 7, selected : 0, point: 1, question : 'Do you have fever?', icon: 'fas fa-thermometer-full'},
+        {id: 8, selected : 0, point: 2, question : 'Are you having difficulty in breathing?', icon: 'fas fa-lungs-virus'},
+        {id: 9, selected : 0, point: 2, question : 'Are you experiencing fatigue?', icon: 'fa fa-male'},
+        {id: 10, selected : 0, point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-plane'},
+        {id: 11, selected : 0, point: 3, question : 'Do you have travel history to a COVID-19 INFECTED AREA?', icon: 'fas fa-map-marked-alt'},
+        {id: 12, selected : 0, point: 3, question : 'Do you have direct contact or is taking care of a positive COVID-19 PATIENT?', icon: 'fas fa-head-side-mask'},
     ]);
 
     const [score, setScore] = useState(0);
@@ -24,6 +24,7 @@ export default function Body() {
             const arr =  CheckList.map((ele) => {
                 if(ele.id === data.id) {
                     ele.selected = checkedValue
+                   console.log(checkedValue)
                 }
                 return ele
             })
@@ -35,10 +36,12 @@ export default function Body() {
 
     useEffect(() => {
         let score =  0;
+       
         CheckList.map(data => {
             if(data.selected === 1){
                 score = score + data.point;
             }
+            
         })
         setScore(score);
     },[CheckList])
@@ -46,9 +49,7 @@ export default function Body() {
     console.log(score)
     return(
         
- //       <div id="wrapper">
-   //     <div id="sticky"> 
-   
+
         <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
           
             <div class="container" >           
@@ -64,23 +65,15 @@ export default function Body() {
                                             </div>
                                             <h4>{data.question}</h4>
                                             <div class="app-download-area">
-                                            {index === 11 ? <Fragment>
+                                           
                                                 <div class="app-download-btn">
-                                                    <a  href = "#"  onClick={() => {handleResult(data, 1)}} className={data.selected === 1  ? 'selected-btn' : ''}><p> Yes</p></a>
+                                                    <a    onClick={() => {handleResult(data, 1)}} className={data.selected === 1  ? 'selected-btn' : ''}><p> Yes</p></a>
                                                 </div>
                                                 <div class="app-download-btn">
-                                                    <a  href = "#"  onClick={() => {handleResult(data, 0)}} className={data.selected === 0 ? 'selected-btn' : ''}> <p> No</p></a>
+                                                    <a   onClick={(defaultValue="defaultName") => {handleResult(data, 0)}} className={data.selected === 0 ? 'selected-btn' : ''}> <p> No</p></a>
                                                 </div>
-                                                </Fragment>
-                                                :<Fragment>
-                                                <div class="app-download-btn">
-                                                    <a onClick={() => {handleResult(data, 1)}} className={data.selected === 1  ? 'selected-btn' : ''}><p> Yes</p></a>
-                                                </div>
-                                                <div class="app-download-btn">
-                                                    <a onClick={() => {handleResult(data, 0)}} className={data.selected === 0 ? 'selected-btn' : ''}> <p> No</p></a>
-                                                </div>
-                                                </Fragment>
-                                            }
+                                               
+                                            
                                             </div>
                                         </div>
                                     </div>
