@@ -92,11 +92,9 @@ export default function Body() {
 
                 <div class="col-12 col-md-4" style={{boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'}} >
                     <div class="row">
-                    <div class="wrapper">
-  <div class="fixed">
-
-
-  <main>
+               <div class="wrapper">
+               <div class="fixed">
+               <main>
 <div class="container">
 <div class="section-heading text-center">
     <h2>Result</h2>
@@ -246,16 +244,17 @@ export default function Body() {
 
 </main>
 
-
-      
- 
+  
+  
+  
+  
+  
+                      </div>
                     </div>
+                    </div>
+                   </div>
+                  </div>
                  </div>
-                 </div>
-</div>
-                 </div>
-                 
-               </div> 
              </section>
     
     );

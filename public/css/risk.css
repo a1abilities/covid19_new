@@ -3,16 +3,16 @@
 
 
 
+
+
 .fixed {
-  position: fixed;
-  background: #f83d23;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  box-shadow: 0 0 6px #000;
-  color: #fff;
+  position: sticky;
+  position: -webkit-sticky;
+
+  width: 370px;
+  height: 0px;
+  top: 30px;
+  
 }
 .extra,
 .wrapper {
@@ -21,16 +21,8 @@
   background-color: #ccc;
 }
 .wrapper {
-  height: 800px;
+  height: 1000px;
 }
-.extra {
-  height: 100px;
-
-}
-
-}
-
-
 
 
 
