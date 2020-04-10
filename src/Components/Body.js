@@ -90,7 +90,7 @@ export default function Body() {
                     </div>
                     
 
-                <div class="col-12 col-md-4" style={{boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'}} >
+                    <div class="col-12 col-md-4" style={{boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'}} >
                     <div class="row">
                <div class="wrapper">
                <div class="fixed">
@@ -256,7 +256,6 @@ export default function Body() {
                   </div>
                  </div>
              </section>
-    
     );
 }
 

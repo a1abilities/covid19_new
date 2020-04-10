@@ -2,28 +2,30 @@
 
 
 
-
-
-
 .fixed {
   position: sticky;
   position: -webkit-sticky;
-  width: 370px;
-  height: 0px;
-  top: 30px;
-  
+  top: 120px;
+  overflow: auto;
+
 }
+  
 .extra,
 .wrapper {
-  width: 75%;
+  width: 100%;
   margin: auto;
-  background-color: #ccc;
+
 }
 .wrapper {
-  height: 200px;
+  height: 2200px;
 }
 
+.result-box{
 
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  background: #f0f1ec;
+
+}
 
 
 :root {
