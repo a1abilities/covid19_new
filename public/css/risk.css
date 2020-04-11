@@ -5,26 +5,27 @@
 .fixed {
   position: sticky;
   position: -webkit-sticky;
-  top: 120px;
+  top: 130px;
   overflow: auto;
-
 }
   
-.extra,
 .wrapper {
+  height: 1170px;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
+  background: #f0f1ec;
   width: 100%;
-  margin: auto;
-
-}
-.wrapper {
-  height: 2200px;
+  padding: 15px 20px;
+  border-radius: 15px;
 }
 
 .result-box{
 
-  box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px;
-  background: #f0f1ec;
-
+  /* box-shadow: rgba(0, 0, 0, 0.3) 0px 0px 10px; */
+  /* background: #f0f1ec; */
+  width: 100%;
+  padding: 15px 20px;
+  border-radius: 15px;
+  /* height: 1330px; */
 }
 
 
@@ -218,7 +219,7 @@ main {
   box-shadow: 0 5px 20px 0 rgba(128, 128, 128, 0.3);
   margin-left: -20px;
   margin-right: -20px;
-  margin-top: 50px;
+  margin-top: 10px;
 }
 
 .section-four *:not(a) {
