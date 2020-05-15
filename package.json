@@ -10,6 +10,8 @@
     "react-back-to-top-button": "0.0.14",
     "react-dom": "^16.13.0",
     "react-lorem-component": "^0.13.0",
+    "react-responsive": "^8.0.3",
+    "react-responsive-navbar": "^1.0.11",
     "react-scripts": "3.4.0",
     "react-sticky": "^6.0.3",
     "react-stickynode": "^2.1.1",

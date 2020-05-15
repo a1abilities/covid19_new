@@ -1,0 +1,238 @@
+.logo {
+    max-width: 200px;
+  }
+  
+
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 20px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+  }
+  
+  .header .container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+  }
+  
+  .header h1 {
+    text-align: center;
+    font-weight: 700;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #884bdf;
+  }
+
+.header_area {
+    left: 0;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    top: 0;
+    padding: 0 4%;
+}
+
+.menu_area .navbar-brand {
+    font-size: 50px;
+    font-weight: 600;
+    color: #fff;
+    margin: 0;
+    line-height: 1;
+    padding: 0;
+}
+
+.title {
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.menu_area .navbar-brand:hover,
+.menu_area .navbar-brand:focus {
+    color: #fff;
+}
+
+
+.menu_area {
+    position: relative;
+    z-index: 2;
+}
+
+.menu_area #nav .nav-link {
+    color: #fff;
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 30px;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+    padding: 35px 15px;
+}
+
+
+.menu_area nav ul li > a:hover {
+    color: #fb397d;
+}
+
+.sing-up-button {
+    text-align: right;
+}
+
+.sing-up-button > a {
+    color: #fff;
+    font-weight: 500;
+    display: inline-block;
+    border: 2px solid #a883e9;
+    height: 50px;
+    min-width: 178px;
+    line-height: 46px;
+    text-align: center;
+    border-radius: 24px 24px 24px 0px;
+}
+
+.sing-up-button > a:hover {
+    background: #fb397d;
+    color: #fff;
+    border-color: transparent;
+    -webkit-transition-duration: 500ms;
+    -o-transition-duration: 500ms;
+    transition-duration: 500ms;
+}
+
+/* stcicky css */
+
+.header_area.sticky {
+    background-color: #884bdf;
+    -webkit-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+}
+
+.header_area.sticky .menu_area .navbar-brand {
+    font-size: 40px;
+}
+
+.header_area.sticky .menu_area #nav .nav-link {
+    padding: 23px 15px;
+}
+.header_area.sticky .navbar {
+    padding: 0;
+}
+
+@media screen and (max-width: 640px){
+    .single-special{
+
+    min-height: 290px;
+}
+}
+
+@media screen and (max-width: 1366px){
+    .single-special{
+
+    min-height: 290px;
+}
+}
+
+@media screen and (max-width: 767px){
+    
+    .container flx-dir{
+        width: 100vw;
+        height: 100px;
+        
+         flex-direction: column;
+         
+    }
+    .header-text{
+        width: 50%;
+        
+    }
+    .flx-dir{
+        flex-direction: column;
+         width: 100%; 
+    }
+    .flx-dir h1{
+        margin: 0px;
+
+    } 
+    .flx-dir .app-download-area {
+        position: static;
+    }
+    .app-download-area {
+        display: contents;
+    }
+
+    .header .container{
+
+        display: contents;
+    }
+    .header{
+        padding: 15px 90px 10px;
+        }
+    }
+    @media screen and (max-width: 1024px){
+        .single-special{
+        height: 270px;
+        }
+
+        .header{
+            padding: 15px 90px 10px;
+            }
+.single-special > h4{
+    height: 60px;
+
+}
+.app-download-area{
+    display: contents;
+}
+ .app-download-btn:first-child {
+
+    padding: 10px 0px;
+    margin: 0px;
+}
+
+.header .container {
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+    width: 100px;
+} 
+ 
+.container.flx-dir {
+            display: -webkit-inline-box;
+       
+     }
+
+.w-100{
+        width: 100%;
+     }
+    }
+
+    @media screen and (max-width: 1024px){
+    .raw{
+        width: 80%;
+    }
+    .header{
+    padding: 15px 90px 10px;
+    }
+    }    
+   
+    @media (min-width: 768px){
+
+.flx-dir .col-md-6 {
+    flex: 0 0 90%;
+    max-width: fit-content;
+}
+.header h1
+{
+    margin: 25px 270px;
+}
+    }

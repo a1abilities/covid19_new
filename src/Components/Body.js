@@ -131,7 +131,7 @@ export default function Body() {
                                                     <ol>
                                                         <li>Stay home and take care of yourself in home isolation</li>
                                                         <li> Prevention and precautions
-                                                        <a href="#details" class="link">See Below</a>
+                                                        <a href="#details" class="link"> &nbsp; See Below</a>
                                                         </li>
                                                         <li>
                                                         Laboratory tests and imaging are optional
@@ -160,7 +160,7 @@ export default function Body() {
                                                     <li>CONSULT A PHYSICIAN and start home isolation immediately</li>
                                                     <li>
                                                         Prevention and precautions
-                                                        <a href="#details" class="link">See Below</a>
+                                                        <a href="#details" class="link">&nbsp;See Below</a>
                                                     </li>
                                                     <li>
                                                         Laboratory tests and imaging may be needed as per your physician’s advise              
@@ -185,7 +185,7 @@ export default function Body() {
                                                     <li>COVID 19 testing may be needed at your physician’s advise</li>
                                                     <li>
                                                         Prevention and precautions
-                                                        <a href="#details" class="link">See Below</a>
+                                                        <a href="#details" class="link">&nbsp;See Below</a>
                                                     </li>
                                                     <li> Laboratory tests and imaging may be needed as per your physician's advise </li>
                                                     <li> Monitor your symptoms and isolate yourself </li>

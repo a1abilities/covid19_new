@@ -1,16 +1,29 @@
 import React from 'react';
+import './header.css';
 
 function Header() {
   return (
-    <header class="header">
-        <div class="container">
-            <a href="https://a1abilities.co.nz" target="_blank">
-                <img src="img/A1.png" alt="A1Abilities" class="logo" />
-            </a>
-            <div class="container"> <h1>COVID-19 RISK SCANNER</h1></div>
+    // <header className="header">
+    //     <div className="container flx-dir">
+    //         <a href="https://a1abilities.co.nz" target="_blank">
+    //             <img src="img/A1.png" alt="A1Abilities" class="logo" />
+    //         </a>
+    //         <div className="header-text"> <h1>COVID-19 RISK SCANNER</h1></div>
 
+    //     </div>
+    // </header>
+    <header class="header">
+    
+    <div class="container flx-dir">
+        <div class="row">
+            <div class="col-md-6">
+              <a href="https://a1abilities.co.nz" target="_blank"><img src="img/A1.png" alt="A1Abilities" class="logo" /></a>
+            </div>
+            <div className ="col-md-6">
+        			 <h1>COVID-19 RISK SCANNER</h1>      
+              </div>     
         </div>
-    </header>
+        </div></header>
   );
 }
 
