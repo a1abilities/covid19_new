@@ -133,6 +133,12 @@
 
     min-height: 290px;
 }
+img.logo {
+    padding: 0px 0px 19px 0px;
+}
+.flx-dir .col-md-6 {
+    text-align: center;
+}
 }
 
 @media screen and (max-width: 1366px){
@@ -140,6 +146,7 @@
 
     min-height: 290px;
 }
+
 }
 
 @media screen and (max-width: 767px){
@@ -175,17 +182,22 @@
         display: contents;
     }
     .header{
-        padding: 15px 90px 10px;
+        padding: 15px 60px 10px;
         }
     }
-    @media screen and (max-width: 1024px){
-        .single-special{
-        height: 270px;
-        }
 
-        .header{
-            padding: 15px 90px 10px;
-            }
+    @media (min-width: 768px) and (max-width: 1024px) {
+.single-special{
+height: 270px;
+ }
+ .header h1 {
+    margin: 25px 0px!important;
+}
+
+
+ .header{
+    padding: 15px 60px 10px;
+      }
 .single-special > h4{
     height: 60px;
 
@@ -214,18 +226,17 @@
 .w-100{
         width: 100%;
      }
+.flx-dir .row{
+    flex-wrap: nowrap;
+
+}
     }
 
-    @media screen and (max-width: 1024px){
-    .raw{
-        width: 80%;
-    }
-    .header{
-    padding: 15px 90px 10px;
-    }
-    }    
+
+ 
    
-    @media (min-width: 768px){
+
+@media (min-width: 768px){
 
 .flx-dir .col-md-6 {
     flex: 0 0 90%;
@@ -235,4 +246,26 @@
 {
     margin: 25px 270px;
 }
+}
+
+
+@media (min-width: 768px){
+    .flx-dir .col-md-6 {
+        flex: 0 0 90%;
+        max-width: fit-content;
     }
+    .header h1
+    {
+        margin: 25px 270px;
+    }
+}
+@media (min-width: 568px){
+    .flx-dir .col-md-6 {
+        padding: 15px 60px 10px;
+        max-width: fit-content;
+    }
+    .header h1
+    {
+        margin: 25px 270px;
+    }
+}
