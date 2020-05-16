@@ -1,6 +1,8 @@
 import React, {useEffect, useState, Fragment} from 'react';
+import Suggestion from './Suggestion';
 
-export default function Body() {
+
+export default function Body({handleItemChange}){
     
     const [CheckList, setCheckList] = useState([
         {id: 1, selected : 0, point: 1, question : 'Do you have cough?', icon: 'fas fa-head-side-cough'},
@@ -24,7 +26,6 @@ export default function Body() {
             const arr =  CheckList.map((ele) => {
                 if(ele.id === data.id) {
                     ele.selected = checkedValue
-                   console.log(checkedValue)
                 }
                 return ele
             })
@@ -46,7 +47,7 @@ export default function Body() {
         setScore(score);
     },[CheckList])
 
-    console.log(score)
+    //console.log(score)
     return(
         
 
@@ -131,7 +132,7 @@ export default function Body() {
                                                     <ol>
                                                         <li>Stay home and take care of yourself in home isolation</li>
                                                         <li> Prevention and precautions
-                                                        <a href="#details" class="link"> &nbsp; See Below</a>
+                                                       
                                                         </li>
                                                         <li>
                                                         Laboratory tests and imaging are optional
@@ -143,16 +144,17 @@ export default function Body() {
                                                         COVID 19 testing may be required at your physician’s advise
                                                         </li>
                                                         <li>
-                                                        Monitor your symptoms and get medical attention if your situation
-                                                        worsens
+                                                        Monitor your symptoms and get medical attention if your situation worsens
                                                         </li>
+                                                      
+                                                    <button type="button" class="link" onClick={() => {handleItemChange(2, 'LOW')}}>&nbsp; Suggestion</button>
+                                                  
                                                     </ol>
                                                     </div>
                                                     :''}
                                                 </section>    
                                             }
 
-                                                
                                             { (score !== null &&  (score >= 6 && score <=12)) &&
                                                 <section class="section-two card section-margin">
                                                     <p>Based on your inputs, A1Abilities recommendations:</p>
@@ -160,7 +162,7 @@ export default function Body() {
                                                     <li>CONSULT A PHYSICIAN and start home isolation immediately</li>
                                                     <li>
                                                         Prevention and precautions
-                                                        <a href="#details" class="link">&nbsp;See Below</a>
+                                                        
                                                     </li>
                                                     <li>
                                                         Laboratory tests and imaging may be needed as per your physician’s advise              
@@ -169,9 +171,11 @@ export default function Body() {
                                                         COVID 19 testing may be required at your physician’s advise
                                                     </li>
                                                     <li>
-                                                        Monitor your symptoms and get medical attention if your situation
-                                                        worsens
+                                                        Monitor your symptoms and get medical attention if your situation worsens
                                                     </li>
+                                                   
+                                                    <button type="button" class="link" onClick={() => {handleItemChange(2, 'MEDIUM')}}>&nbsp; Suggestion</button>
+                                                 
                                                     </ol>
                                                 </section>
                                             }
@@ -185,11 +189,14 @@ export default function Body() {
                                                     <li>COVID 19 testing may be needed at your physician’s advise</li>
                                                     <li>
                                                         Prevention and precautions
-                                                        <a href="#details" class="link">&nbsp;See Below</a>
+                                                       
                                                     </li>
                                                     <li> Laboratory tests and imaging may be needed as per your physician's advise </li>
                                                     <li> Monitor your symptoms and isolate yourself </li>
                                                     <li> You can CONSULT ONLINE here to speak to a physician immediately </li>
+                                                   
+                                                    <button type="button" class="link" onClick={() => {handleItemChange(2, 'HIGH')}}>&nbsp; Suggestion</button>
+                                                  
                                                     </ol>
                                                 </section>
                                             }

@@ -191,10 +191,11 @@ img.logo {
 height: 270px;
  }
  .header h1 {
-    margin: 25px 0px!important;
+    margin: 25px 100px!important;
 }
-
-
+.wrapper {
+    height: 1570px;
+}
  .header{
     padding: 15px 60px 10px;
       }
@@ -249,7 +250,8 @@ height: 270px;
 }
 
 
-@media (min-width: 768px){
+@media (min-width: 768px) 
+{
     .flx-dir .col-md-6 {
         flex: 0 0 90%;
         max-width: fit-content;
@@ -258,10 +260,14 @@ height: 270px;
     {
         margin: 25px 270px;
     }
+   .col-12
+    {
+    margin: auto;
+    }
 }
 @media (min-width: 568px){
     .flx-dir .col-md-6 {
-        padding: 15px 60px 10px;
+        padding: 15px 0px 10px;
         max-width: fit-content;
     }
     .header h1
