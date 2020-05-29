@@ -20,8 +20,8 @@ export default function Body(){
         {id: 8, selected : 0, point: 2, question : 'Are you having difficulty in breathing?', icon: 'fas fa-lungs-virus'},
         {id: 9, selected : 0, point: 2, question : 'Are you experiencing fatigue?', icon: 'fa fa-male'},
         {id: 10, selected : 0, point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-plane'},
-        {id: 11, selected : 0, point: 3, question : 'Do you have travel history to a Covid-19 infected area?', icon: 'fas fa-map-marked-alt'},
-        {id: 12, selected : 0, point: 3, question : 'Do you have direct contact or is taking care of a positive Covid-19 patient?', icon: 'fas fa-head-side-mask'},
+        {id: 11, selected : 0, point: 3, question : 'Do you have travel history to a covid-19 infected area?', icon: 'fas fa-map-marked-alt'},
+        {id: 12, selected : 0, point: 3, question : 'Do you have direct contact or is taking care of a positive covid-19 patient?', icon: 'fas fa-head-side-mask'},
     ]);
 
     const [score, setScore] = useState(0);
