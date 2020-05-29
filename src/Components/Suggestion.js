@@ -1,13 +1,24 @@
 import React, {useEffect, useState, Fragment} from 'react';
+import {Link} from 'react-router-dom';
 
 
-export default function Suggestion({handleItemChange, type}) {
+import Header from './Header.js'
+import Footer from './Footer.js'
+
+
+
+export default function Suggestion(props) {
+    const type = props.location.state.risk;
     
+    useEffect(() => {
+        window.scrollTo(0,0);
+    },[]);
   
     return(
-
-
-                    <div class="col-12 col-md-4">
+        <Fragment>
+            <Header />
+            
+                    <div  class="col-12 col-md-4">
                             <div class="wrapper">
                                 <div class="fixed">
                                                                                 
@@ -15,10 +26,10 @@ export default function Suggestion({handleItemChange, type}) {
                                                 <h2> Suggestion</h2>
                                                 <div class="line-shape"></div>
                                             </div>
-                                             <section class="section-four" id="details">
-                                                <h3>Prevention and Precautions - Basic protective measures</h3>
+                                            <section class="section-four" id="details">
+                                                <h3>Prevention and precautions - basic protective measures</h3>
                                                 <p>
-                                                Be aware or Educate yourself with the latest updates on the
+                                                Be aware or educate yourself with the latest updates on the
                                                 following websites : 
                                                 <a href="https://www.who.int/health-topics/coronavirus" target="_blank" >WHO </a> &
                                                 <a href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert" target="_blank"> Department of Health - Australia</a> &
@@ -39,7 +50,7 @@ export default function Suggestion({handleItemChange, type}) {
                                                 
                                                 </li>
                                                 <li>
-                                                    <h4><img src="/img/s.svg" width="50px"></img>&nbsp;Practice respiratory hygiene</h4>
+                                                    <h4><img src="/img/s.svg" width="50px"></img>&nbsp;Practice tespiratory hygiene</h4>
                                                 
                                                 </li>
                                             
@@ -49,11 +60,11 @@ export default function Suggestion({handleItemChange, type}) {
                                                 <section class="section-two card section-margin">
                                              
                                                         <div>
-                                                    <p>Based on your inputs, A1Abilities advises the following:</p>
+                                                        <p>Based on your inputs, A1Abilities advises the following:</p>
                                                     <ol>
-                                                        <li>Stay home and take care of yourself in home isolation</li>
+                                                        <li>Stay home and take-care of yourself in home isolation</li>
                                                         <li> Prevention and precautions
-                                                        
+                                                       
                                                         </li>
                                                         <li>
                                                         Laboratory tests and imaging are optional
@@ -62,14 +73,13 @@ export default function Suggestion({handleItemChange, type}) {
                                                         >
                                                         </li>
                                                         <li>
-                                                        COVID 19 testing may be required at your physician’s advise
+                                                        Covid-19 testing may be required at your physician’s advise
                                                         </li>
                                                         <li>
                                                         Monitor your symptoms and get medical attention if your situation worsens
                                                         </li>
-                                                      
-                                                        <button type="button" class="link" onClick={() => {handleItemChange(1, 'LOW')}}>Go&nbsp; Back </button>
-                                               
+                                                        <br></br>
+                                                        <Link to={{pathname :'/'}}> GO Back </Link>
                                                     </ol>
                                                     </div>
                        
@@ -81,7 +91,7 @@ export default function Suggestion({handleItemChange, type}) {
                                                 <section class="section-two card section-margin">
                                                     <p>Based on your inputs, A1Abilities recommendations:</p>
                                                     <ol>
-                                                    <li>CONSULT A PHYSICIAN and start home isolation immediately</li>
+                                                    <li>Consult a physician and start home isolation immediately</li>
                                                     <li>
                                                         Prevention and precautions
                                                         
@@ -90,14 +100,13 @@ export default function Suggestion({handleItemChange, type}) {
                                                         Laboratory tests and imaging may be needed as per your physician’s advise              
                                                     </li>
                                                     <li>
-                                                        COVID 19 testing may be required at your physician’s advise
+                                                        Covid-19 testing may be required at your physician’s advise
                                                     </li>
                                                     <li>
                                                         Monitor your symptoms and get medical attention if your situation worsens
                                                     </li>
-                                                  
-                                                    <button type="button" class="link" onClick={() => {handleItemChange(1, 'LOW')}}>Go&nbsp; Back </button>
-                                                   
+                                                    <br></br>
+                                                    <Link to={{pathname :'/'}}> GO Back </Link>
                                                     </ol>
                                                 </section>
                                                 }
@@ -105,32 +114,33 @@ export default function Suggestion({handleItemChange, type}) {
                                             {type === 'HIGH' &&
                                             
                                                 <section class="section-two card section-margin">
-                                                    <p>Based on your inputs, A1Abilities recommendations:</p>
+                                                     <p>Based on your inputs, A1Abilities recommendations:</p>
                                                     <ol>
                                                     <li>Seek immediate medical attention and get yourself tested</li>
                                                     <li>Please visit a physician as there may be a requirement for further care</li>
-                                                    <li>COVID 19 testing may be needed at your physician’s advise</li>
+                                                    <li>Covid-19 testing may be needed at your physician’s advise</li>
                                                     <li>
                                                         Prevention and precautions
-                                                        
+                                                       
                                                     </li>
                                                     <li> Laboratory tests and imaging may be needed as per your physician's advise </li>
                                                     <li> Monitor your symptoms and isolate yourself </li>
-                                                    <li> You can CONSULT ONLINE here to speak to a physician immediately </li>
-                                                   
-                                                    <button type="button" class="link" onClick={() => {handleItemChange(1, 'LOW')}}>Go&nbsp; Back </button>
+                                                    <li> You can consult online here to speak to a physician immediately </li>
                                                     
+                                                    <br></br>
+                                                    <Link to={{pathname :'/'}}> GO Back </Link>
                                                     </ol>
                                                 </section>
                                             }
-                                            
+                                             
                                             </div>
                                             
                                           
                                             
                                         </div>
-                             </div>
-                
+                             </div> 
+         <Footer />
+    </ Fragment>                
           
     );
 }

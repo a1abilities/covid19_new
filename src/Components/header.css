@@ -142,6 +142,10 @@ img.logo {
 .flx-dir .col-12.col-md-4 {
    padding-right: 45px; 
 }
+.wrapper {
+       
+    margin: 0px;
+}
 }
 
 @media (min-width:1024)and (max-width: 1366px)
@@ -153,6 +157,10 @@ img.logo {
 .flx-dir .col-12.col-md-4 {
     padding-right: 45px; 
  }
+ .wrapper {
+       
+    margin: 0px;
+}
 }
 @media (max-width: 1024px) and (min-width: 768px)
 {
@@ -162,6 +170,10 @@ img.logo {
 .flx-dir .col-12.col-md-4 {
     padding-right: 45px; 
  }
+ .wrapper {
+       
+    margin: 0px;
+}
 
 }
 
@@ -202,6 +214,10 @@ img.logo {
         }
     .flx-dir .col-12.col-md-4 {
         padding-right: 45px; 
+    }
+    .wrapper {
+       
+        margin: 0px;
     }
     }
 
@@ -244,6 +260,11 @@ img.logo {
         .flx-dir .col-12.col-md-4 {
             padding-right: 45px; 
          }
+
+         .wrapper {
+       
+            margin: 0px;
+        }
     }
 
 
@@ -288,6 +309,10 @@ img.logo {
             .flx-dir .col-12.col-md-4 {
                 padding-right: 45px; 
              }
+             .wrapper {
+       
+                margin: 0px;
+            }
         }
     
 
@@ -339,6 +364,10 @@ height: 270px;
 .flx-dir .col-12.col-md-4 {
     padding-right: 45px; 
  }
+ .wrapper {
+       
+    margin: 0px;
+}
     }
 
 

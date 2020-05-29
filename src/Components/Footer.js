@@ -4,7 +4,7 @@ function Footer() {
   return (
     <footer class="text-center section_padding_50" style={{boxShadow: '0 0 10px rgba(0, 0, 0, 0.3)'}}>
         <div class="copyright-text">
-            <p >Copyright 2019 &copy;All rights reserved | A1abilities PTY TLD  ABN# 82631548224</p>
+            <p >Copyright 2019 &copy;All Rights Reserved | A1abilities PTY TLD  ABN# 82631548224</p>
         </div>
     </footer>
   );

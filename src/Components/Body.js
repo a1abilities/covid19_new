@@ -1,26 +1,32 @@
 import React, {useEffect, useState, Fragment} from 'react';
-import Suggestion from './Suggestion';
+import {Link} from 'react-router-dom';
 
 
-export default function Body({handleItemChange}){
+import Header from './Header.js'
+import Footer from './Footer.js'
+
+
+
+export default function Body(){
     
     const [CheckList, setCheckList] = useState([
         {id: 1, selected : 0, point: 1, question : 'Do you have cough?', icon: 'fas fa-head-side-cough'},
         {id: 2, selected : 0, point: 1, question : 'Do you have cold?', icon: 'fas fa-thermometer-empty'},
         {id: 3, selected : 0, point: 1, question : 'Are you having diarrhea?', icon: 'fas fa-male',icon:'fas fa-toilet '},
         {id: 4, selected : 0, point: 1, question : 'Do you have sore throat?', icon: 'fas fa-diagnoses'},
-        {id: 5, selected : 0, point: 1, question : 'Are you experiencing MYALGIA or body aches?', icon: 'fas fa-lungs'},
+        {id: 5, selected : 0, point: 1, question : 'Are you experiencing myalgia or body aches?', icon: 'fas fa-lungs'},
         {id: 6, selected : 0, point: 1, question : 'Do you have a headache?', icon: 'fas fa-brain'},
         {id: 7, selected : 0, point: 1, question : 'Do you have fever?', icon: 'fas fa-thermometer-full'},
         {id: 8, selected : 0, point: 2, question : 'Are you having difficulty in breathing?', icon: 'fas fa-lungs-virus'},
         {id: 9, selected : 0, point: 2, question : 'Are you experiencing fatigue?', icon: 'fa fa-male'},
         {id: 10, selected : 0, point: 3, question : 'Do you have you traveled recently during the past 14 days?', icon: 'fas fa-plane'},
-        {id: 11, selected : 0, point: 3, question : 'Do you have travel history to a COVID-19 INFECTED AREA?', icon: 'fas fa-map-marked-alt'},
-        {id: 12, selected : 0, point: 3, question : 'Do you have direct contact or is taking care of a positive COVID-19 PATIENT?', icon: 'fas fa-head-side-mask'},
+        {id: 11, selected : 0, point: 3, question : 'Do you have travel history to a Covid-19 infected area?', icon: 'fas fa-map-marked-alt'},
+        {id: 12, selected : 0, point: 3, question : 'Do you have direct contact or is taking care of a positive Covid-19 patient?', icon: 'fas fa-head-side-mask'},
     ]);
 
     const [score, setScore] = useState(0);
 
+    
     const handleResult = async(data, checkedValue) => {
         try{
             const arr =  CheckList.map((ele) => {
@@ -47,10 +53,13 @@ export default function Body({handleItemChange}){
         setScore(score);
     },[CheckList])
 
-    //console.log(score)
+
+
+  
     return(
         
-
+        <Fragment>
+            <Header />
         <section class="awesome-feature-area bg-white section_padding_0_50 clearfix" id="features">
           
             <div class="container" >           
@@ -114,9 +123,9 @@ export default function Body({handleItemChange}){
                                                     <h1 class={score !== null && (score >= 0 && score <=5 ? "low" : score >= 6 && score <=12 ? "mid" : score >= 13 ? "high" : '')}>
                                                         {score !== null && 
                                                             ( score >= 0 && score <=2 ? <p>May be stress related and observe.</p>
-                                                            : score >= 3 && score <=5 ? <p>Hydrate properly and proper personal hygine.<br />Observe and Re-evaluate after 2 days.</p>
+                                                            : score >= 3 && score <=5 ? <p>Hydrate properly and proper personal hygine.<br />observe and re-evaluate after 2 days.</p>
                                                             : score >= 6 && score <=12? <p>Seek a consultation with doctor.</p>
-                                                            : score >= 13 ? <p>Call the DOH Hotline 02-8-651-7800"</p>
+                                                            : score >= 13 ? <p>Call the doh hotline 02-8-651-7800"</p>
                                                             : '')
                                                         }
                                                     </h1>    
@@ -130,7 +139,7 @@ export default function Body({handleItemChange}){
                                                         <div>
                                                     <p>Based on your inputs, A1Abilities advises the following:</p>
                                                     <ol>
-                                                        <li>Stay home and take care of yourself in home isolation</li>
+                                                        <li>Stay home and take-care of yourself in home isolation</li>
                                                         <li> Prevention and precautions
                                                        
                                                         </li>
@@ -141,13 +150,16 @@ export default function Body({handleItemChange}){
                                                         >
                                                         </li>
                                                         <li>
-                                                        COVID 19 testing may be required at your physician’s advise
+                                                        Covid-19 testing may be required at your physician’s advise
                                                         </li>
                                                         <li>
                                                         Monitor your symptoms and get medical attention if your situation worsens
                                                         </li>
-                                                      
-                                                    <button type="button" class="link" onClick={() => {handleItemChange(2, 'LOW')}}>&nbsp; Suggestion</button>
+                                                      <br></br>
+                                                      <Link to={{pathname :'/suggestion', state : {risk: 'LOW'}}}>
+                                                        <button type="button" class="link"> Suggestion</button>    
+                                                    </Link>
+                                                    
                                                   
                                                     </ol>
                                                     </div>
@@ -159,7 +171,7 @@ export default function Body({handleItemChange}){
                                                 <section class="section-two card section-margin">
                                                     <p>Based on your inputs, A1Abilities recommendations:</p>
                                                     <ol>
-                                                    <li>CONSULT A PHYSICIAN and start home isolation immediately</li>
+                                                    <li>Consult a physician and start home isolation immediately</li>
                                                     <li>
                                                         Prevention and precautions
                                                         
@@ -168,14 +180,15 @@ export default function Body({handleItemChange}){
                                                         Laboratory tests and imaging may be needed as per your physician’s advise              
                                                     </li>
                                                     <li>
-                                                        COVID 19 testing may be required at your physician’s advise
+                                                        Covid-19 testing may be required at your physician’s advise
                                                     </li>
                                                     <li>
                                                         Monitor your symptoms and get medical attention if your situation worsens
                                                     </li>
-                                                   
-                                                    <button type="button" class="link" onClick={() => {handleItemChange(2, 'MEDIUM')}}>&nbsp; Suggestion</button>
-                                                 
+                                                    <br></br>                                                    
+                                                    <Link to={{pathname :'/suggestion', state : {risk: 'MEDIUM'}}}>
+                                                        <button type="button" class="link"> Suggestion</button>    
+                                                    </Link>
                                                     </ol>
                                                 </section>
                                             }
@@ -186,17 +199,18 @@ export default function Body({handleItemChange}){
                                                     <ol>
                                                     <li>Seek immediate medical attention and get yourself tested</li>
                                                     <li>Please visit a physician as there may be a requirement for further care</li>
-                                                    <li>COVID 19 testing may be needed at your physician’s advise</li>
+                                                    <li>Covid-19 testing may be needed at your physician’s advise</li>
                                                     <li>
                                                         Prevention and precautions
                                                        
                                                     </li>
                                                     <li> Laboratory tests and imaging may be needed as per your physician's advise </li>
                                                     <li> Monitor your symptoms and isolate yourself </li>
-                                                    <li> You can CONSULT ONLINE here to speak to a physician immediately </li>
-                                                   
-                                                    <button type="button" class="link" onClick={() => {handleItemChange(2, 'HIGH')}}>&nbsp; Suggestion</button>
-                                                  
+                                                    <li> You can consult online here to speak to a physician immediately </li>
+                                                    <br></br>                                                    
+                                                    <Link to={{pathname :'/suggestion', state : {risk: 'HIGH'}}}>
+                                                        <button type="button" class="link"> Suggestion</button>    
+                                                    </Link>
                                                     </ol>
                                                 </section>
                                             }
@@ -204,9 +218,9 @@ export default function Body({handleItemChange}){
                                             </div>:
                                             
                                             <section class="section-four" id="details">
-                                                <h3>Prevention and Precautions - Basic protective measures</h3>
+                                                <h3>Prevention and precautions - basic protective measures</h3>
                                                 <p>
-                                                Be aware or Educate yourself with the latest updates on the
+                                                Be aware or educate yourself with the latest updates on the
                                                 following websites : 
                                                 <a href="https://www.who.int/health-topics/coronavirus" target="_blank" >WHO </a> &
                                                 <a href="https://www.health.gov.au/news/health-alerts/novel-coronavirus-2019-ncov-health-alert" target="_blank"> Department of Health - Australia</a> &
@@ -227,7 +241,7 @@ export default function Body({handleItemChange}){
                                                 
                                                 </li>
                                                 <li>
-                                                    <h4><img src="/img/s.svg" width="50px"></img>&nbsp;Practice respiratory hygiene</h4>
+                                                    <h4><img src="/img/s.svg" width="50px"></img>&nbsp;Practice tespiratory hygiene</h4>
                                                 
                                                 </li>
                                             
@@ -240,6 +254,8 @@ export default function Body({handleItemChange}){
                 </div>
             </div>
         </section>
+        <Footer />
+    </Fragment>
     );
 }
 

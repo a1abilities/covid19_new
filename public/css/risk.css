@@ -173,7 +173,7 @@ main {
   font-size: 15px;
   font-weight: 600;
   color: var(--text-color);
-  line-height: 1.5;
+  line-height: 2;
   list-style: decimal;
 }
 
