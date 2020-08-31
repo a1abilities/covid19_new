@@ -79,7 +79,7 @@ export default function Suggestion(props) {
                                                         Monitor your symptoms and get medical attention if your situation worsens
                                                         </li>
                                                         <br></br>
-                                                        <Link to={{pathname :'/'}}> GO Back </Link>
+                                                        <Link to={{pathname :'/'}}> Go Back </Link>
                                                     </ol>
                                                     </div>
                        
@@ -106,7 +106,7 @@ export default function Suggestion(props) {
                                                         Monitor your symptoms and get medical attention if your situation worsens
                                                     </li>
                                                     <br></br>
-                                                    <Link to={{pathname :'/'}}> GO Back </Link>
+                                                    <Link to={{pathname :'/'}}> Go Back </Link>
                                                     </ol>
                                                 </section>
                                                 }
@@ -128,7 +128,7 @@ export default function Suggestion(props) {
                                                     <li> You can consult online here to speak to a physician immediately </li>
                                                     
                                                     <br></br>
-                                                    <Link to={{pathname :'/'}}> GO Back </Link>
+                                                    <Link to={{pathname :'/'}}> Go Back </Link>
                                                     </ol>
                                                 </section>
                                             }

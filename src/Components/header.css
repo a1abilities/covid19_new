@@ -400,6 +400,7 @@ height: 270px;
    .col-12
     {
     margin: auto;
+    padding: 15px;
     }
     .flx-dir .col-12.col-md-4 {
         padding-right: 45px; 
